@@ -3,7 +3,7 @@
 /**
  * cap_string - capitalizes all words of a string
  * @str: string
- * Return: String
+ * Return: Pointer to string
  */
 char *cap_string(char *str)
 {
@@ -31,6 +31,5 @@ char *cap_string(char *str)
 
 		i++;
 	}
-
 	return (str);
 }
