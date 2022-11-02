@@ -13,7 +13,7 @@ void print_diagsums(int *a, int size)
 
 	for (b = O; b < size; b++)
 	{
-		sum1 += a[(sier + 1) * b];
+		sum1 += a[(size + 1) * b];
 		sum2 += a[(size - 1) * (b + 1)];
 	}
 
