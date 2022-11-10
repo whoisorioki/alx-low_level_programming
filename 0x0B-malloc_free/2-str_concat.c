@@ -3,40 +3,52 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - function that returns a pointer to a 2 dimensional array of int
- * @width: width of the grid
- * @height: height of the grid
+ * str_concat - function that concatenates two strings
+ * @s1: string of chars
+ * @s2: string of chars
  * Return: address of the newly allocated memory
  */
 
-int **alloc_grid(int width, int height)
+char *str_concat(char *s1, char *s2)
 {
-	int i, j, m, n;
-	int **grid;
+	unsigned int len1, len2;
+	unsigned int i, j;
+	char *str_copy;
+	char *tmp1 = s1;
+	char *tmp2 = s2;
 
-	if (width <= 0 || height <= 0)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	i = 0;
+	while (*s1++)
+		i++;
+	len1 = i;
+	s1 = tmp1;
+
+	i = 0;
+	while (*s2++)
+		i++;
+	len2 = i;
+	s2 = tmp2;
+
+	str_copy = malloc((len1 + len2) * sizeof(char) + 1);
+	if (str_copy == NULL)
 		return (NULL);
 
-	grid = malloc(height * sizeof(int *));
-	if (grid == NULL)
-		return (NULL);
-	for (i = 0; i < height; i++)
+	j = 0;
+	while (j < len1)
 	{
-		grid[i] = malloc(width * sizeof(int));
-		if (grid[i] == NULL)
-		{
-			for (j = 0; j < i; j++)
-			{
-				free(grid[j]);
-			}
-			free(grid);
-			return (NULL);
-		}
+		str_copy[j] = s1[j];
+		j++;
 	}
-	for (m = 0; m < height; m++)
+	while (j < len1 + len2)
 	{
-		for (n = 0; n < width; n++)
-			grid[m][n] = 0;
+		str_copy[j] = s2[j - len1];
+		j++;
 	}
-	return (grid);
+	str_copy[j] = '\0';
+	return (str_copy);
 }
