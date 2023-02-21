@@ -9,9 +9,9 @@ void times_table(void)
 {
 	int n, m, result;
 
-	for(n = 0; n < 10; n++)
+	for (n = 0; n < 10; n++)
 	{
-		for(m = 0; m < 10; m++)
+		for (m = 0; m < 10; m++)
 		{
 			result = n * m;
 			if (m == 0)
