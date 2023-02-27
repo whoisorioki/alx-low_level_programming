@@ -18,6 +18,7 @@ void print_rev(char *s)
 		else
 			break;
 	}
+	i--;
 	while (i >= 0)
 	{
 		_putchar(s[i]);
