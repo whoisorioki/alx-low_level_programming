@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _strcat - Concatenatess two strings
  * @dest: pointer to char, destination
@@ -21,4 +22,4 @@ char *_strcat(char *dest, char *src)
 	}
 	*dest = '\0';
 	return (ptr);
-}	
+}
