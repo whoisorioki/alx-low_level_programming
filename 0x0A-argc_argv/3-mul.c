@@ -10,8 +10,8 @@
  */
 int main(int argc, char **argv)
 {
-	int i,result;
-	
+	int i, result;
+
 	result = 1;
 	if (argc == 3)
 	{
